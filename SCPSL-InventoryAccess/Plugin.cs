@@ -21,7 +21,7 @@ namespace SCPSL_InventoryAccess
                 Events.DoorInteractEvent += _handlers.OnPlayerDoorInteract;
                 Events.LockerInteractEvent += _handlers.OnPlayerLockerInteract;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Log.Error(_prefix + "Registering event handlers failed!");
             }
