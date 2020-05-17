@@ -17,18 +17,21 @@ namespace SCPSL_InventoryAccess
         public void OnPlayerDoorInteract(ref DoorInteractionEvent ev)
         {
             if (SCP_ROLES.Contains(ev.Player.GetRole())) return;
+            if (ev.Allow) return;
             ev.Allow = hasPermission(ev.Player, ev.Door.permissionLevel);
         }
 
         public void OnPlayerLockerInteract(LockerInteractionEvent ev)
         {
             if (SCP_ROLES.Contains(ev.Player.GetRole())) return;
+            if (ev.Allow) return;
             ev.Allow = hasPermission(ev.Player, ev.Locker.chambers[0].accessToken);
         }
 
         public void OnGeneratorAccess(ref GeneratorUnlockEvent ev)
         {
             if (SCP_ROLES.Contains(ev.Player.GetRole())) return;
+            if (ev.Allow) return;
             ev.Allow = hasPermission(ev.Player, "ARMORY_LVL_2");
         }
 
