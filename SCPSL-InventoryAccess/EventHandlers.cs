@@ -26,6 +26,12 @@ namespace SCPSL_InventoryAccess
             ev.Allow = hasPermission(ev.Player, ev.Locker.chambers[0].accessToken);
         }
 
+        public void OnGeneratorAccess(ref GeneratorUnlockEvent ev)
+        {
+            if (SCP_ROLES.Contains(ev.Player.GetRole())) return;
+            ev.Allow = hasPermission(ev.Player, "ARMORY_LVL_2");
+        }
+
         private bool hasPermission(ReferenceHub player, String requested)
         {
             

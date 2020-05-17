@@ -19,6 +19,7 @@ namespace SCPSL_InventoryAccess
                 _handlers = new EventHandlers();
                 Events.DoorInteractEvent += _handlers.OnPlayerDoorInteract;
                 Events.LockerInteractEvent += _handlers.OnPlayerLockerInteract;
+                Events.GeneratorUnlockEvent += _handlers.OnGeneratorAccess;
             }
             catch (Exception)
             {
@@ -31,6 +32,7 @@ namespace SCPSL_InventoryAccess
             Log.Info("De-registering event handlers");
             Events.DoorInteractEvent -= _handlers.OnPlayerDoorInteract;
             Events.LockerInteractEvent -= _handlers.OnPlayerLockerInteract;
+            Events.GeneratorUnlockEvent -= _handlers.OnGeneratorAccess;
             _handlers = null;
         }
 
