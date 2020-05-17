@@ -31,6 +31,7 @@ namespace SCPSL_InventoryAccess
         public void OnGeneratorAccess(ref GeneratorUnlockEvent ev)
         {
             if (SCP_ROLES.Contains(ev.Player.GetRole())) return;
+            if (ev.Allow) return;
             ev.Allow = hasPermission(ev.Player, "ARMORY_LVL_2");
         }
 
