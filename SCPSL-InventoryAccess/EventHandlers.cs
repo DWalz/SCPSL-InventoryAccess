@@ -28,6 +28,21 @@ namespace SCPSL_InventoryAccess
             ev.IsAllowed = HasPermission(ev.Player, "ARMORY_LVL_2");
         }
 
+        public void OnActivatingWarheadPanel(ActivatingWarheadPanelEventArgs ev)
+        {
+            ev.IsAllowed = false; // Due to workaround, reset allowed
+
+            if (ev.Player.IsBypassModeEnabled)
+            {
+                ev.IsAllowed = true;
+                return;
+            }
+
+            if (ev.Player.Side == Side.Scp) return;
+
+            ev.IsAllowed = HasPermission(ev.Player, "CONT_LVL_3");
+        }
+
         private bool HasPermission(Player player, string requested)
         {
             if (requested == "")
