@@ -1,9 +1,10 @@
+## ⚠️ Important Note
+This plugin is NOT under active development and is built for EXILED 3. There is an actively maintained alternative [here](https://github.com/Parkeymon/RemoteKeycard).
+
 # SCPSL-InventoryAccess
 
 Access doors and lockers without having to hold the keycard in your hands. 
 Built on the EXILED framework for SCP: Secret Laboratory
-
-**Important Note:** This plugin is NOT under active development and is built for EXILED 3. There is an actively maintained alternative [here](https://github.com/Parkeymon/RemoteKeycard).
 
 Download the compiled `SCPSL-InventoryAccess.dll` in the [releases](https://github.com/DWalz/SCPSL-InventoryAccess/releases) tab. 
 If you want to compile it youself, download the source code and do so.
